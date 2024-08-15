@@ -704,7 +704,7 @@ impl OsIpcOneShotServer {
 
     #[allow(clippy::type_complexity)]
     pub fn accept(
-        self,
+        &self,
     ) -> Result<
         (
             OsIpcReceiver,

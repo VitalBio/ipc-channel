@@ -882,7 +882,7 @@ where
         ))
     }
 
-    pub fn accept(self) -> Result<(IpcReceiver<T>, T), bincode::Error> {
+    pub fn accept(&self) -> Result<(IpcReceiver<T>, T), bincode::Error> {
         let (os_receiver, data, os_channels, os_shared_memory_regions) = self.os_server.accept()?;
         let value = OpaqueIpcMessage {
             data,
